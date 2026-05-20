@@ -4,3 +4,4 @@ dist/
 build/
 .DS_Store
 .github/workflows/deploy.yml
+k8s/secrets.yaml
