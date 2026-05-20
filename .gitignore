@@ -1,2 +1,12 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment Files
 .env
+*.env
+frontend/.env
+backend/.env
+
+# Kubernetes Secrets
 k8s/secrets.yaml
