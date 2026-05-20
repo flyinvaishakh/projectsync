@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: projectsync-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: projectsync-frontend
+  template:
+    metadata:
+      labels:
+        app: projectsync-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: sleepsurplus/projectsync-frontend:latest
+        ports:
+        - containerPort: 80

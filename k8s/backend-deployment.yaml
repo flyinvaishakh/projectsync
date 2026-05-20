@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: projectsync-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: projectsync-backend
+  template:
+    metadata:
+      labels:
+        app: projectsync-backend
+    spec:
+      containers:
+      - name: backend
+        image: sleepsurplus/projectsync-backend:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: PORT
+          value: "5000"
+        - name: MONGO_URI
+          valueFrom:
+            secretKeyRef:
+              name: projectsync-secrets
+              key: mongo-uri
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: projectsync-secrets
+              key: jwt-secret
