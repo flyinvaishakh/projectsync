@@ -4,7 +4,7 @@ import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
 import { Plus, ArrowLeft, Calendar, Trash2 } from 'lucide-react';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = import.meta.env.VITE_API_URL || 'https://projectsync-4tka.onrender.com';
 
 const ProjectDetail = () => {
     const { id } = useParams();
